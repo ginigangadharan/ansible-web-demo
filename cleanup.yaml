@@ -1,0 +1,10 @@
+- name: Cleanup
+  hosts: nodes
+  become: yes
+  tasks:
+    - name: Uninstall httpd and firewalld
+      yum:
+        name: 
+          - httpd
+          - firewalld
+        state: absent
